@@ -19,7 +19,7 @@ canvas.center();
 
 webcam = createCapture(VIDEO);
 webcam.hide();
-poseNet = ml5.poseNet(Webcam,modelLoaded);
+poseNet = ml5.poseNet(webcam,modelLoaded);
 
 poseNet.on('pose',gotPoses);
 }
@@ -52,7 +52,7 @@ console.log("modelLoaded");
 }
 
 function draw(){
-image(Webcam,0,0,600,500);
+image(webcam,0,0,600,500);
 
 if(scorerightw>0.2){
 fill("#00FF00");
